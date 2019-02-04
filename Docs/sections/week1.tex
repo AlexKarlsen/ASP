@@ -1,0 +1,60 @@
+\thispagestyle{fancy}
+\section{Week1}
+
+Consider a FIR filter with a single zero located at $z_0 = re^{j\theta}$. This means that
+
+\begin{align}
+   H(\omega) = 1-re^{j\theta}-e^{j\omega} = 1- r \cdot \cos(\omega -\theta) + jr \cdot \sin(\omega - \theta)
+\end{align}
+
+
+\begin{enumerate}
+\tightlist
+\item Show that the phase response is
+  \begin{align}
+    \Psi(\omega) = \tan^{-1} \bigg(\frac{r\cdot \sin(\omega-\theta)}{1-r\cdot\cos(\omega-\theta)}\bigg)
+  \end{align}
+
+The phase a complex number $a+ib$ is defined by:
+
+\begin{align}
+    \theta=\tan^{-1}\bigg(\frac{b}{a}\bigg)
+\end{align}
+
+Thus it becomes;
+
+\begin{align}
+    Psi(\omega)=\tan^{-1} \bigg(\frac{r\cdot \sin(\omega-\theta)}{1-r\cdot\cos(\omega-\theta)}\bigg)
+\end{align}
+
+    \item Show that the group delay becomes
+    
+    \begin{align}
+        \tau(\omega)=\frac{r^2-r\cdot \cos(\omega-\theta)}{1+r^2-2r\cdot \cos(\omega-\theta}
+    \end{align}
+    
+    Group delay is defined as;
+    
+    \begin{align}
+        \tau(\omega)=-\frac{d}{d\omega}\theta(\omega)=-\frac{d}{d\omega}\Bigg(\tan^{-1} \bigg(\frac{r\cdot \sin(\omega-\theta)}{1-r\cdot\cos(\omega-\theta)}\bigg)\Bigg)
+    \end{align}
+    
+    Applying the chain rule
+    \begin{align}
+        \frac{d}{dx}\big[f\big(g(x)\big)\big]= f'\big(g(x))g'(x)\big)
+    \end{align}
+    
+    \begin{align}
+        \tau(\omega)=\frac{1}{1+\Big(\frac{r\cdot \sin(\omega-\theta)}{1-r\cdot\cos(\omega-\theta)}\Big)^2}\cdot  \frac{r \cdot (\cos(\omega-\theta)-r\cdot \cos(\omega-\theta)-r\cdot \sin(\omega-\theta))}{(1-r\cdot \cos(\omega-\theta))^2}
+    \end{align}
+    
+    Simplifying the expression leads to
+
+    \begin{align}
+        \tau(\omega)=\frac{r^2-r\cdot \cos(\omega-\theta)}{1+r^2-2r\cdot \cos(\omega-\theta}
+    \end{align}
+
+    \item What physical unit is used to measure group delay?
+    \end{enumerate}
+    
+    Group delay is measures in units of the sampling period, $\frac{1}{f_s}$
